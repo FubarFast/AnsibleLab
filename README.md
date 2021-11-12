@@ -32,6 +32,7 @@ vagrant ssh devnode
 ```
 
 And run your ansible playbook against the target node.
+
 Note: The .yml files in this example would be stored on the host in the C:\Code\Ansible folder shared with the vagrant config.
 ```
 ansible-playbook /ansible/example-playbook.yml
