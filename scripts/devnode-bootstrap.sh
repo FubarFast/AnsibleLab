@@ -34,8 +34,8 @@ ansible_python_interpreter=/usr/bin/python3
 ENDOFFILE
 
 # Copy the vagrant generated private key (which the host uses to connect to targetnode via vagrant)
-# to devnode so devnode may also ssh to targetnode via ansible.
+# to devnode so it may connect to targetnode via ansible.
 cp /vagrant/.vagrant/machines/targetnode/virtualbox/private_key /home/vagrant/.ssh/id_rsa
-chmod 400 /home/vagrant/.ssh/id_rsa
 
-# wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+# update permissions
+chmod 400 /home/vagrant/.ssh/id_rsa
