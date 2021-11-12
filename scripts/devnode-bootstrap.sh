@@ -19,7 +19,7 @@ sudo apt-get install -y powershell
 # sudo apt-get install -y ubuntu-desktop
 
 # Install Ansible
-sudo apt install -y ansible
+sudo apt-get install -y ansible
 
 # Install Python3 pip
 sudo apt-get -y install python3-pip
@@ -35,7 +35,7 @@ ENDOFFILE
 
 # Copy the vagrant generated private key (which the host uses to connect to targetnode via vagrant)
 # to devnode so it may connect to targetnode via ansible.
-cp /vagrant/.vagrant/machines/targetnode/virtualbox/private_key /home/vagrant/.ssh/id_rsa
+sudo cp /vagrant/.vagrant/machines/targetnode/virtualbox/private_key /home/vagrant/.ssh/id_rsa
 
 # update permissions
-chmod 400 /home/vagrant/.ssh/id_rsa
+sudo chmod 777 /home/vagrant/.ssh/id_rsa
