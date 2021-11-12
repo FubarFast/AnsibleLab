@@ -17,6 +17,7 @@ This will install:
 It will also disable Hyper-V if the feature is found to be enabled.
 
 Once this is completed, you can run a git clone on the repo if you havn't already.
+
 git clone https://github.com/FubarFast/AnsibleLab.git
 
 You can then navigate to the newly created folder and run:
