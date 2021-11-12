@@ -5,11 +5,12 @@ Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://cho
 
 # required tooling
 $packages = @(
-    "git"
-    "poshgit"
-    "vscode"
-    "virtualbox"
-    "vagrant"
+    "git"           # Git
+    "poshgit"       # PowerShel Git integration
+    "gh"            # GitHub CLI    
+    "vscode"        # Visual Studio Code
+    "virtualbox"    # Virtual Box
+    "vagrant"       # Vagrant
 )
 
 # loop through package list and install
@@ -25,4 +26,10 @@ $feature = Get-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-All
 if ($feature.State -like 'Enabled')
 {
     Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V-All
+}
+
+# check for ansible folder and create if absent
+if (!(Test-Path C:\Code\Ansible\))
+{
+    New-Item -ItemType Directory -Path C:\Code\Ansible
 }
